@@ -1,22 +1,41 @@
 import React from 'react';
 
-import Todo from './Todo';
-
 const TodoList = props => {
-    console.log(props);
-
-    const sortByCompletedList = props.todo.sort((a, b) => a.completed - b.completed);
-    
     return (
     <div className="todo-list">
-        {props.todo.map(todo => (
-            <Todo 
-            key={todo.id} 
-            todo={todo} 
-            toggleTodo={props.toggleTodo} />
-        ))}
+        <h2>To-Do List:</h2>
+        {
+        props.state.todos.map(item => (
+                return (
+                    <div onClick={() => {
+                        props.dispatch({
+                            type: "TOGGLE_COMPLETED",
+                            payload: item.id
+                        })
+                    }}>
+                    <p key={item.id}>{item.item}</p>
+            
+                    {
+                    item.completed ? 
+                    <p className="completedTaskConfirm">COMPLETED!</p>
+                    :
+                    <p className="completedTaskConfirm"> Not Done</p>
+                    }
+                    </div>
+            )
+        ))
+        })
+        }
+
+        <button onClick={()=> {
+            props.dispatch({
+                type: "REMOVE_COMPLETED"
+            })
+        }}>
+            Remove Completed
+        </button>
     </div>
-    );
-};
+    )
+}
 
 export default TodoList;
