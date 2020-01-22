@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const TodoForm = ({dispatch}) => {
 
     const [newTodoText, setNewTodoText] = useState('');
+    
 
     const handleChanges = e => {
     setNewTodoText(e.target.value);
@@ -20,7 +21,7 @@ const TodoForm = ({dispatch}) => {
             className="todo-input"
             type="text"
             name="newTodoText"
-            placeholder="What Do You Need To Do?"
+            placeholder="What's Your To Do?"
             value={newTodoText}
             onChange={handleChanges}
             />

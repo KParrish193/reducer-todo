@@ -4,8 +4,7 @@ const TodoList = props => {
     return (
     <div className="todo-list">
         <h2>To-Do List:</h2>
-        {
-        props.state.todos.map(item => (
+        {props.state.todos.map(item => {
                 return (
                     <div onClick={() => {
                         props.dispatch({
@@ -17,13 +16,12 @@ const TodoList = props => {
             
                     {
                     item.completed ? 
-                    <p className="completedTaskConfirm">COMPLETED!</p>
+                    <p className="completedTaskConfirm" style={{color: "green"}}>COMPLETED!</p>
                     :
-                    <p className="completedTaskConfirm"> Not Done</p>
+                    <p className="completedTaskConfirm" style={{color: "red"}}> Not Done</p>
                     }
                     </div>
             )
-        ))
         })
         }
 

@@ -26,7 +26,7 @@ function App() {
             <div>
             <TodoList 
               state={state} 
-              dispatch={dispatch} 
+              dispatch={dispatch}
             />
             </div>
           </div>

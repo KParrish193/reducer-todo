@@ -6,7 +6,7 @@ export const initialState = {
     item: 'Learn About Reducers',
     completed: false,
     id: 1
-    }
+    },
         {
     item: 'Finish Reducer Project',
     completed: false,
